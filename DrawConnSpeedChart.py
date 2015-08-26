@@ -1,5 +1,10 @@
 #!/usr/bin/python
 
+### DrawConnSpeedChart  v0.6
+### Eric Lee  (leezhenyu@gmail.com)
+### Silicon Cloud International Pte Ltd.
+
+
 import os
 import sys
 import subprocess
@@ -64,7 +69,7 @@ speed1 = ax.bar(ind, download, width, color='g')
 speed2 = ax.bar(ind+width, upload, width, color='y') 
 
 ax.set_ylabel('Speed (Mbits)')
-ax.set_title('Bandwidth Benchmark at' + strftime("%Y%m%d GMT %H", gmtime()))
+ax.set_title('Bandwidth Benchmark at ' + strftime("%Y%m%d GMT %H", gmtime()))
 ax.set_xticks(ind+width)
 ax.set_xticklabels(city)
 
