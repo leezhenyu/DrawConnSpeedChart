@@ -28,7 +28,7 @@ def autolabel(speeds):
     # attach some text labels
     for speed in speeds:
         height = speed.get_height()
-        ax.text(speed.get_x()+speed.get_width()/2., 1.05*height, '%d'%int(height), ha='center', va='bottom')
+        ax.text(speed.get_x()+speed.get_width()/2., 1.02*height, '%d'%int(height), ha='center', va='bottom')
 
 
 city = []
@@ -67,13 +67,13 @@ fig, ax = plt.subplots()
 speed1 = ax.bar(ind, download, width, color='g') 
 
 speed2 = ax.bar(ind+width, upload, width, color='y') 
-
+ax.set_xlabel('City')
 ax.set_ylabel('Speed (Mbits)')
-ax.set_title('Bandwidth Benchmark at ' + strftime("%Y%m%d GMT %H", gmtime()))
+ax.set_title('Bandwidth Benchmark at ' + strftime("%Y%m%d GMT %H", gmtime()), y=1.03)
 ax.set_xticks(ind+width)
 ax.set_xticklabels(city)
 
-ax.legend( (speed1[0], speed2[0]), ('Download', 'Upload') )
+ax.legend( (speed1[0], speed2[0]), ('Download', 'Upload'),loc='best' )
 
 
 
